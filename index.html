@@ -1,102 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            background-color: #a1ccb4;
-            padding-top: 20px;
-            text-align: center;
+import SwiftUI
+
+@main
+struct GroceryStoreApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
         }
+    }
+}
 
-        .icon {
-            border-radius: 50%;
-            background-color: white;
-            padding: 10px;
-            margin: 10px;
-            display: inline-block;
+struct ContentView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                // Replace with your logo image
+                Image(systemName: "photo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200, height: 100)
+                    .padding()
+
+                SearchBar()
+
+                // Top icons
+                HStack {
+                    IconView(icon: "apple")
+                    IconView(icon: "bread")
+                    IconView(icon: "wineglass")
+                    IconView(icon: "face")
+                }
+                .padding()
+
+                Spacer()
+
+                // Bottom icons
+                HStack {
+                    NavigationLink(destination: HomeView()) {
+                        IconView(icon: "house")
+                    }
+
+                    NavigationLink(destination: WeeklyAdView()) {
+                        IconView(icon: "calendar")
+                    }
+
+                    NavigationLink(destination: ShopView()) {
+                        IconView(icon: "cart")
+                    }
+
+                    NavigationLink(destination: ShoppingListView()) {
+                        IconView(icon: "list.bullet")
+                    }
+                }
+                .padding()
+                .background(Color(#colorLiteral(red: 0.631372549, green: 0.8, blue: 0.7058823529, alpha: 1)))
+
+            }
+            .navigationTitle("Grocery Store")
         }
+    }
+}
 
-        .bottom-icons {
-            display: flex;
-            justify-content: space-around;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #a1ccb4;
-            padding: 10px;
-        }
+struct SearchBar: View {
+    @State private var searchText = ""
 
-        .content {
-            margin-top: 20px;
-        }
+    var body: some View {
+        TextField("Search for Item or Scan Barcode", text: $searchText)
+            .padding()
+    }
+}
 
-        .logo {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
-    <title>Your Grocery Store App</title>
-</head>
-<body>
+struct IconView: View {
+    var icon: String
 
-    <!-- Upload your logo here -->
-    <div>
-        <img class="logo" src="PATH_TO_YOUR_LOGO_IMAGE" alt="Your Grocery Store Logo">
-    </div>
+    var body: some View {
+        Image(systemName: icon)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 50, height: 50)
+            .padding()
+            .background(Color.white)
+            .clipShape(Circle())
+    }
+}
 
-    <!-- Search bar -->
-    <div>
-        <input type="text" placeholder="Search for Item or Scan Barcode">
-    </div>
+struct HomeView: View {
+    var body: some View {
+        // Home content here
+        Text("Home Content")
+    }
+}
 
-    <!-- Top icons -->
-    <div class="content">
-        <div class="icon">TOP_ICON_1</div>
-        <div class="icon">TOP_ICON_2</div>
-        <div class="icon">TOP_ICON_3</div>
-        <div class="icon">TOP_ICON_4</div>
-    </div>
+struct WeeklyAdView: View {
+    var body: some View {
+        // Weekly Ad content here
+        Text("Weekly Ad Content")
+    }
+}
 
-    <!-- Bottom icons -->
-    <div class="bottom-icons">
-        <div class="icon">HOME</div>
-        <div class="icon">WEEKLY AD</div>
-        <div class="icon">SHOP</div>
-        <div class="icon">SHOPPING LIST</div>
-    </div>
+struct ShopView: View {
+    var body: some View {
+        // Shop content here
+        Text("Shop Content")
+    }
+}
 
-    <!-- Home content -->
-    <div class="content">
-        <h2>Featured Specials</h2>
-        <!-- Content loaded from https://www.pccmarkets.com/departments/weekly-specials/ -->
-
-        <h2>Member-only Discounts</h2>
-        <!-- Content for both member and non-member accounts -->
-    </div>
-
-    <!-- Weekly Ad content -->
-    <div class="content">
-        <h2>Weekly Ad</h2>
-        <!-- Content loaded from https://www.pccmarkets.com/departments/weekly-specials/all/ -->
-    </div>
-
-    <!-- Shop content -->
-    <div class="content">
-        <!-- Different categories and items loaded dynamically -->
-        <!-- Use JavaScript to handle category clicks and data retrieval -->
-    </div>
-
-    <!-- Shopping List content -->
-    <div class="content">
-        <h2>Shopping List</h2>
-        <!-- Content for the shopping list -->
-    </div>
-
-    <script>
-        // Add JavaScript code for dynamic functionality here
-    </script>
-
-</body>
-</html>
+struct ShoppingListView: View {
+    var body: some View {
+        // Shopping List content here
+        Text("Shopping List Content")
+    }
+}
