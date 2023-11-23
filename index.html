@@ -5,104 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #00ff00; /* Replace with your desired green background color */
-            margin: 0;
-            padding: 0;
-        }
-
-        #header {
-            background-color: #ffffff; /* Replace with your desired header background color */
-            padding: 20px;
+            background-color: #a1ccb4;
+            padding-top: 20px;
             text-align: center;
-        }
-
-        #logo {
-            /* UPLOAD YOUR LOGO IMAGE HERE */
-            width: 100px; /* Adjust the size according to your logo */
-            height: auto;
-        }
-
-        #search-bar {
-            text-align: center;
-            padding: 10px;
-        }
-
-        #bottom-bar {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background-color: #ffffff; /* Replace with your desired bottom bar background color */
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-        }
-
-        #icons {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
         }
 
         .icon {
-            /* UPLOAD YOUR ICON IMAGES HERE */
-            width: 30px; /* Adjust the size according to your icons */
+            border-radius: 50%;
+            background-color: white;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .bottom-icons {
+            display: flex;
+            justify-content: space-around;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #a1ccb4;
+            padding: 10px;
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        .logo {
+            max-width: 100%;
             height: auto;
-            margin: 5px;
-            /* ADD CUT OUT SHAPES AROUND EACH ICON */
-        }
-
-        #home-content {
-            padding: 20px;
-        }
-
-        #weekly-ad-content,
-        #shop-content,
-        #shopping-list-content {
-            padding: 20px;
-            display: none; /* Initially hide content, show when clicked */
         }
     </style>
-    <script>
-        // JavaScript code for handling interactions and data loading
-        // You'll need to use a library like jQuery or fetch API for HTTP requests
-
-        function showHomeContent() {
-            // Load featured specials from https://www.pccmarkets.com/departments/weekly-specials/
-            // Display on #home-content
-            // Check membership and show "Member-only discounts"
-            // Use AJAX or fetch API to load data
-        }
-
-        function showWeeklyAdContent() {
-            // Load weekly ad from https://www.pccmarkets.com/departments/weekly-specials/all/
-            // Display on #weekly-ad-content
-        }
-
-        function showShopContent(category) {
-            // Load items based on the selected category
-            // Display on #shop-content
-        }
-
-        function showShoppingListContent() {
-            // Display shopping list content
-            // You'll need to implement adding items to the list
-        }
-    </script>
+    <title>Your Grocery Store App</title>
 </head>
 <body>
 
-    <div id="header">
-        <img id="logo" src="path/to/logo.png" alt="Your Logo">
+    <!-- Upload your logo here -->
+    <div>
+        <img class="logo" src="PATH_TO_YOUR_LOGO_IMAGE" alt="Your Grocery Store Logo">
     </div>
 
-    <div id="search-bar">
+    <!-- Search bar -->
+    <div>
         <input type="text" placeholder="Search for Item or Scan Barcode">
     </div>
 
-    <div id="bottom-bar">
-        <div id="icons">
-            <img class="icon" src="path/to/home-icon.png" alt="Home" onclick="showHomeContent()">
-            <img class="icon" src="path/to/weekly-ad-icon.png" alt="Weekly Ad" onclick="showWeeklyAdContent()">
-            <img class="icon" src="path/to/shop-icon.png" alt="Shop" onclick="showShopContent()">
-            <img class="icon" src="path/to/shopping-list-icon.png" alt="Shopping List" oncl
+    <!-- Top icons -->
+    <div class="content">
+        <div class="icon">TOP_ICON_1</div>
+        <div class="icon">TOP_ICON_2</div>
+        <div class="icon">TOP_ICON_3</div>
+        <div class="icon">TOP_ICON_4</div>
+    </div>
+
+    <!-- Bottom icons -->
+    <div class="bottom-icons">
+        <div class="icon">HOME</div>
+        <div class="icon">WEEKLY AD</div>
+        <div class="icon">SHOP</div>
+        <div class="icon">SHOPPING LIST</div>
+    </div>
+
+    <!-- Home content -->
+    <div class="content">
+        <h2>Featured Specials</h2>
+        <!-- Content loaded from https://www.pccmarkets.com/departments/weekly-specials/ -->
+
+        <h2>Member-only Discounts</h2>
+        <!-- Content for both member and non-member accounts -->
+    </div>
+
+    <!-- Weekly Ad content -->
+    <div class="content">
+        <h2>Weekly Ad</h2>
+        <!-- Content loaded from https://www.pccmarkets.com/departments/weekly-specials/all/ -->
+    </div>
+
+    <!-- Shop content -->
+    <div class="content">
+        <!-- Different categories and items loaded dynamically -->
+        <!-- Use JavaScript to handle category clicks and data retrieval -->
+    </div>
+
+    <!-- Shopping List content -->
+    <div class="content">
+        <h2>Shopping List</h2>
+        <!-- Content for the shopping list -->
+    </div>
+
+    <script>
+        // Add JavaScript code for dynamic functionality here
+    </script>
+
+</body>
+</html>
