@@ -3,88 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Grocery Store App</title>
     <style>
-        /* Add your CSS styles for the app here */
         body {
             font-family: Arial, sans-serif;
+            background-color: #00ff00; /* Replace with your desired green background color */
             margin: 0;
             padding: 0;
         }
 
-        /* Add more styles as needed */
+        #header {
+            background-color: #ffffff; /* Replace with your desired header background color */
+            padding: 20px;
+            text-align: center;
+        }
+
+        #logo {
+            /* UPLOAD YOUR LOGO IMAGE HERE */
+            width: 100px; /* Adjust the size according to your logo */
+            height: auto;
+        }
+
+        #search-bar {
+            text-align: center;
+            padding: 10px;
+        }
+
+        #bottom-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff; /* Replace with your desired bottom bar background color */
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        #icons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .icon {
+            /* UPLOAD YOUR ICON IMAGES HERE */
+            width: 30px; /* Adjust the size according to your icons */
+            height: auto;
+            margin: 5px;
+            /* ADD CUT OUT SHAPES AROUND EACH ICON */
+        }
+
+        #home-content {
+            padding: 20px;
+        }
+
+        #weekly-ad-content,
+        #shop-content,
+        #shopping-list-content {
+            padding: 20px;
+            display: none; /* Initially hide content, show when clicked */
+        }
     </style>
-</head>
-<body>
-    <!-- UPLOAD LOGO HERE -->
-    <div class="logo-container">
-        <!-- Your logo image goes here -->
-    </div>
-
-    <!-- Top Section -->
-    <div class="top-section">
-        <input type="text" placeholder="Search for Item or Scan Barcode">
-        <!-- UPLOAD ICON HERE -->
-        <img src="path/to/search-icon.png" alt="Search Icon">
-    </div>
-
-    <!-- Bottom Section -->
-    <div class="bottom-section">
-        <div class="bottom-icons">
-            <!-- UPLOAD ICONS HERE -->
-            <img src="path/to/home-icon.png" alt="Home Icon">
-            <img src="path/to/weekly-ad-icon.png" alt="Weekly Ad Icon">
-            <img src="path/to/shop-icon.png" alt="Shop Icon">
-            <img src="path/to/shopping-list-icon.png" alt="Shopping List Icon">
-        </div>
-
-        <!-- Home Page Content -->
-        <div class="home-page-content">
-            <h2>Featured Specials</h2>
-            <!-- Featured specials content loaded dynamically -->
-            <!-- UPLOAD ICON HERE -->
-            <img src="path/to/member-only-discounts-icon.png" alt="Member-only Discounts Icon">
-            <h2>Member-only Discounts</h2>
-            <!-- Member-only discounts content loaded dynamically -->
-        </div>
-
-        <!-- Weekly Ad Page -->
-        <div class="weekly-ad-page">
-            <!-- Weekly Ad content loaded from https://www.pccmarkets.com/departments/weekly-specials/all/ -->
-        </div>
-
-        <!-- Shop Page -->
-        <div class="shop-page">
-            <!-- Different categories of groceries -->
-            <button class="category-btn" onclick="loadCategory('fresh')">Fresh</button>
-            <button class="category-btn" onclick="loadCategory('grocery')">Grocery</button>
-            <button class="category-btn" onclick="loadCategory('alcohol')">Alcohol</button>
-            <button class="category-btn" onclick="loadCategory('health')">Health and Beauty</button>
-            <button class="category-btn" onclick="loadCategory('household')">Household</button>
-
-            <!-- Items dynamically loaded based on category selection -->
-            <div class="category-items" id="category-items-container"></div>
-        </div>
-
-        <!-- Shopping List Page -->
-        <div class="shopping-list-page">
-            <!-- Shopping list items added by users -->
-        </div>
-    </div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <!-- Your JavaScript code for handling app logic goes here -->
-
     <script>
-        // Example function for loading category items
-        function loadCategory(category) {
-            // Make an API request to fetch items based on the selected category
-            // Update the #category-items-container with the fetched items
-            // This is where you would dynamically load items based on the category
-            $("#category-items-container").html(`<p>Items in ${category} category will be loaded here.</p>`);
+        // JavaScript code for handling interactions and data loading
+        // You'll need to use a library like jQuery or fetch API for HTTP requests
+
+        function showHomeContent() {
+            // Load featured specials from https://www.pccmarkets.com/departments/weekly-specials/
+            // Display on #home-content
+            // Check membership and show "Member-only discounts"
+            // Use AJAX or fetch API to load data
+        }
+
+        function showWeeklyAdContent() {
+            // Load weekly ad from https://www.pccmarkets.com/departments/weekly-specials/all/
+            // Display on #weekly-ad-content
+        }
+
+        function showShopContent(category) {
+            // Load items based on the selected category
+            // Display on #shop-content
+        }
+
+        function showShoppingListContent() {
+            // Display shopping list content
+            // You'll need to implement adding items to the list
         }
     </script>
-</body>
-</html>
+</head>
+<body>
+
+    <div id="header">
+        <img id="logo" src="path/to/logo.png" alt="Your Logo">
+    </div>
+
+    <div id="search-bar">
+        <input type="text" placeholder="Search for Item or Scan Barcode">
+    </div>
+
+    <div id="bottom-bar">
+        <div id="icons">
+            <img class="icon" src="path/to/home-icon.png" alt="Home" onclick="showHomeContent()">
+            <img class="icon" src="path/to/weekly-ad-icon.png" alt="Weekly Ad" onclick="showWeeklyAdContent()">
+            <img class="icon" src="path/to/shop-icon.png" alt="Shop" onclick="showShopContent()">
+            <img class="icon" src="path/to/shopping-list-icon.png" alt="Shopping List" oncl
