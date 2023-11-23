@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Grocery Store App</title>
+    <style>
+        /* Add your CSS styles for the app here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <!-- UPLOAD LOGO HERE -->
+    <div class="logo-container">
+        <!-- Your logo image goes here -->
+    </div>
+
+    <!-- Top Section -->
+    <div class="top-section">
+        <input type="text" placeholder="Search for Item or Scan Barcode">
+        <!-- UPLOAD ICON HERE -->
+        <img src="path/to/search-icon.png" alt="Search Icon">
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="bottom-section">
+        <div class="bottom-icons">
+            <!-- UPLOAD ICONS HERE -->
+            <img src="path/to/home-icon.png" alt="Home Icon">
+            <img src="path/to/weekly-ad-icon.png" alt="Weekly Ad Icon">
+            <img src="path/to/shop-icon.png" alt="Shop Icon">
+            <img src="path/to/shopping-list-icon.png" alt="Shopping List Icon">
+        </div>
+
+        <!-- Home Page Content -->
+        <div class="home-page-content">
+            <h2>Featured Specials</h2>
+            <!-- Featured specials content loaded dynamically -->
+            <!-- UPLOAD ICON HERE -->
+            <img src="path/to/member-only-discounts-icon.png" alt="Member-only Discounts Icon">
+            <h2>Member-only Discounts</h2>
+            <!-- Member-only discounts content loaded dynamically -->
+        </div>
+
+        <!-- Weekly Ad Page -->
+        <div class="weekly-ad-page">
+            <!-- Weekly Ad content loaded from https://www.pccmarkets.com/departments/weekly-specials/all/ -->
+        </div>
+
+        <!-- Shop Page -->
+        <div class="shop-page">
+            <!-- Different categories of groceries -->
+            <button class="category-btn" onclick="loadCategory('fresh')">Fresh</button>
+            <button class="category-btn" onclick="loadCategory('grocery')">Grocery</button>
+            <button class="category-btn" onclick="loadCategory('alcohol')">Alcohol</button>
+            <button class="category-btn" onclick="loadCategory('health')">Health and Beauty</button>
+            <button class="category-btn" onclick="loadCategory('household')">Household</button>
+
+            <!-- Items dynamically loaded based on category selection -->
+            <div class="category-items" id="category-items-container"></div>
+        </div>
+
+        <!-- Shopping List Page -->
+        <div class="shopping-list-page">
+            <!-- Shopping list items added by users -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Your JavaScript code for handling app logic goes here -->
+
+    <script>
+        // Example function for loading category items
+        function loadCategory(category) {
+            // Make an API request to fetch items based on the selected category
+            // Update the #category-items-container with the fetched items
+            // This is where you would dynamically load items based on the category
+            $("#category-items-container").html(`<p>Items in ${category} category will be loaded here.</p>`);
+        }
+    </script>
+</body>
+</html>
